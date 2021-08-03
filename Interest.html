@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/interest.css">
+    <title>Interest Calculator</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <span class="logo">Invest-Tutor</span>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Interest.html">Interest</a></li>
+                <li><a href="/EMI.html">EMI</a></li>
+                <!-- <li><a href="/news.html">News</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="calc">
+        <div class="si">
+            <h1>
+                Simple Interest Calculator
+            </h1>
+            <div class="amt">
+                <label for="amount">Enter Principle Amount (in ₹):</label>
+                <input type="number" name="amount" id="amount" placeholder="">
+            </div>
+            <div class="time">
+                <label for="time">Enter Time (in years):   </label>
+                <input type="number" name="time" id="time" placeholder="">
+            </div>
+            <div class="rate">
+                <label for="rate">Rate(per annum): </label>
+                <input type="number" name="rate" id="rate" placeholder="">
+            </div>
+            <div class="button">
+                <button onclick="CalculateS()">Calculate</button>
+            </div>
+            <div class="result">
+                <h3 id="si"></h3>
+            </div>
+        </div>
+        <div class="si">
+            <h1>
+                Compound Interest Calculator
+            </h1>
+            <div class="amt">
+                <label for="amount">Enter Principle Amount (in ₹):   </label>
+                <input type="number" name="amount" id="amountC" placeholder="">
+            </div>
+            <div class="time">
+                <label for="time">Enter Time (in years):   </label>
+                <input type="number" name="time" id="timeC" placeholder="">
+            </div>
+            <div class="rate">
+                <label for="rate">Rate (per annum): </label>
+                <input type="number" name="rate" id="rateC" placeholder="">
+            </div>
+            <div class="button">
+                <button onclick="CalculateC()">Calculate</button>
+            </div>
+            <div class="result">
+                <h3 id="ci"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; Invest-Tutor </p>
+    </div>
+    <script>
+        function CalculateS() {
+            let p = document.getElementById('amount').value;
+            let t = document.getElementById('time').value;
+            let r = document.getElementById('rate').value;
+
+            let SI = (p * t * r) / 100;
+
+            document.getElementById('si').innerHTML = "The Total Simple Intrest is: ₹ " + SI.toFixed(2);
+        }
+
+        function CalculateC() {
+            let pc = document.getElementById('amountC').value;
+            let tc = document.getElementById('timeC').value;
+            let rc = document.getElementById('rateC').value;
+
+            let CI = pc * Math.pow(1 + (rc / 100), tc) - pc;
+            let nCI = CI.toFixed(2);
+
+            document.getElementById('ci').innerHTML = "The Total Compound Intrest is: ₹ " + nCI;
+        }
+    </script>
+</body>
+
+</html>

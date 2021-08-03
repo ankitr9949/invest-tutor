@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    height: 60px;
+    background-color: black;
+    display: flex;
+    /*breaks given div into aligned pieces*/
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    opacity: 0.8;
+}
+
+.nav-left {
+    font-family: var(--font1);
+    display: flex;
+}
+
+.nav-right {
+    font-family: var(--font2);
+}
+
+.nav-left ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left ul li {
+    list-style: none;
+}
+
+.nav-left ul li:hover {
+    font-weight: bolder;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 14px;
+}
+
+.logo {
+    color: white;
+    margin: 0 50px;
+    font-size: 22px;
+    align-items: center;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/interest.css">
+    <title>Interest Calculator</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <span class="logo">Invest-Tutor</span>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Interest.html">Interest</a></li>
+                <li><a href="/EMI.html">EMI</a></li>
+                <!-- <li><a href="/news.html">News</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="calcEMI">
+        <div class="si">
+            <h1>
+                EMI Calculator
+            </h1>
+            <div class="amt">
+                <label for="amount">Enter Principle Amount (in ₹):</label>
+                <input type="number" name="amount" id="amount" placeholder="">
+            </div>
+            <div class="rate">
+                <label for="rate">Rate(per annum): </label>
+                <input type="number" name="rate" id="rate" placeholder="">
+            </div>
+            <div class="time">
+                <label for="time">Enter Tenure (in months):   </label>
+                <input type="number" name="time" id="time" placeholder="">
+            </div>
+            <div class="button">
+                <button onclick="CalculateEMI()">Calculate</button>
+            </div>
+            <div class="result">
+                <h3 id="emi"></h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; Invest-Tutor </p>
+    </div>
+    <script>
+        function CalculateEMI() {
+            let p = document.getElementById('amount').value;
+            let n = document.getElementById('time').value;
+            let r = document.getElementById('rate').value;
+            r = r * 0.01 / 12;
+            let EMI = p * r * (Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1));
+            document.getElementById('emi').innerHTML = "The EMI for your loan is : ₹ " + EMI.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

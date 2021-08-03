@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+:root {
+    --font1: 'Ubuntu', sans-serif;
+    --font2: 'Roboto', sans-serif;
+}
+
+.max-width1 {
+    max-width: 80vw;
+    /* vw: pecentage of total screen */
+}
+
+.max-width2 {
+    max-width: 70vw;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.my-2 {
+    margin-top: 32px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.btn {
+    border-color: black;
+    border-width: 2px;
+    /* border-radius: 10px; */
+    font-family: var(--font2);
+    /* margin: 0 5px; */
+    padding: 0 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(86, 94, 93);
+}
+
+.form-input {
+    border-color: black;
+    border-width: 2px;
+    border-radius: 50px;
+    font-family: var(--font2);
+    margin: 0 5px;
+    padding: 0 10px;
+    text-align: center;
+}
